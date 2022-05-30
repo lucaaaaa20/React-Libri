@@ -51,7 +51,7 @@ app.get("/libreria/libro/:isbn", (req, res) => {
 
 //------------------------------ AGGIUNTA LIBRO ---------------------------------
 app.post("/libreria/addLibro", (req, res) => {
-    connection.query(`INSERT INTO lista_libri (autore, titolo) VALUES ("${req.body.autore}", "${req.body.titolo}" )`, (errore, risultato, campi) => {
+    connection.query(`INSERT INTO lista_libri (autore, titolo, descrizione) VALUES ("${req.body.autore}", "${req.body.titolo}", "${req.body.descrizione}" )`, (errore, risultato, campi) => {
         if (!errore)
             res.json("libro aggiunto con successo");
         else
@@ -65,7 +65,7 @@ app.post("/libreria/addLibro", (req, res) => {
 
 //--------------------- MODIFICA LIBRO TRAMITE ISBN -----------------------------
 app.put("/libreria/modifica/:isbn", (req, res) => {
-    connection.query(`UPDATE lista_libri SET autore = "${req.body.autore}", titolo = "${req.body.titolo}" WHERE isbn = ${req.params.isbn} `, (errore, risultato, campi) => {
+    connection.query(`UPDATE lista_libri SET autore = "${req.body.autore}", titolo = "${req.body.titolo}", descrizione = "${req.body.descrizione}" WHERE isbn = ${req.params.isbn} `, (errore, risultato, campi) => {
         if (!errore)
             res.json("success");
         else
