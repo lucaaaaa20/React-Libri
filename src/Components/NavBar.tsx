@@ -9,12 +9,12 @@ export const NavBar = () => {
         <>
             <Nav defaultActiveKey="/home" as="ul" className="bg-dark py-2 mb-5 nav-index">
                 <Nav.Item as="li">
-                    <Link to="/form" className="nav-link    ">
-                        <FontAwesomeIcon icon={faRectangleList} /> Inserimento
+                    <Link to="/form" className="nav-link text-nav">
+                        <FontAwesomeIcon icon={faRectangleList}/> Inserimento
                     </Link>
                 </Nav.Item>
                 <Nav.Item as="li">
-                    <Link to="/lista-card" className="nav-link">
+                    <Link to="/lista-card" className="nav-link text-nav">
                         <FontAwesomeIcon icon={faBook} /> Libreria
                     </Link>
                 </Nav.Item>

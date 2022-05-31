@@ -64,14 +64,17 @@ export const ListaLibri = () => {
     return (
         <Row>
             {libri?.map((elemento: any, indice: any) =>
-                <><Col className=" col-lg-4 col-md-6 col-sm-12 col-12 mb-3 col-index">
+                <><Col className=" col-lg-4 col-md-6 col-sm-12 col-12 mb-3 col-index text-white">
                     <form onSubmit={prova}>
                         <Card className="border border-dark p-2" key={indice}>
-                            <Card.Title className="mt-3"><strong>Titolo:</strong> {elemento.titolo ? elemento.titolo : "Non definito"}</Card.Title>
-                            <hr className="hr"></hr>
-                            <Card.Body><strong>Autore:</strong> {elemento.autore ? elemento.autore : "Non definito"}</Card.Body>
-                            <hr className="hr"></hr>
-                            <Card.Body className="mb-4"><strong>Descrizione:</strong> {elemento.descrizione ? elemento.descrizione : "Non definito"}</Card.Body>
+                            <Card.Title className="mt-3"><strong>Titolo</strong></Card.Title>
+                            <div className="card-body-text"> {elemento.titolo ? elemento.titolo : "Non definito"}</div>
+                            {/* <hr className="hr"></hr> */}
+                            <Card.Title><strong>Autore</strong></Card.Title>
+                            <div className="card-body-text">{elemento.autore ? elemento.autore : "Non definito"}</div>
+                            {/* <hr className="hr"></hr> */}
+                            <Card.Title ><strong>Descrizione:</strong></Card.Title>
+                            <div className="mb-4 card-footer-text">{elemento.descrizione ? elemento.descrizione : "Non definito"}</div>
                             <Card.Body> <button className="btn me-1 btn-card btn-delete" onClick={() => elimina(elemento.isbn)}><FontAwesomeIcon icon={faTrashCan} /></button>
                                 <Button type="submit" variant="primary" onClick={() => apriModale(elemento.isbn)} className="btn-card"><FontAwesomeIcon icon={faPencil} /></Button>
                             </Card.Body>
@@ -82,7 +85,7 @@ export const ListaLibri = () => {
             )
             }
             <>
-                <Modal className="p-4" show={show} onHide={handleClose}>
+                <Modal className="p-4 text-white" show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modifica</Modal.Title>
                     </Modal.Header>

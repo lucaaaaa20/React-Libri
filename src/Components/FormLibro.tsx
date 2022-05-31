@@ -29,7 +29,7 @@ export const FormLibro = () => {
             <div className="row">
                 <div className="col-lg-3">
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 text-white">
                     <form onSubmit={inserimentoLibro} className="form-aggiunta p-4 mb-5">
                         <Form.Group>
                             <Form.Label className="mt-2">Autore</Form.Label>
