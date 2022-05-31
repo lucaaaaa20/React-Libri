@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Card, Col, Row, Modal, Form } from "react-bootstrap";
 import { Libro } from "../Interfaces/Libro";
+import { FormLibro } from "./FormLibro";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan, faPencil, faFloppyDisk, faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
     aggiorna: boolean,
@@ -11,10 +14,10 @@ interface Props {
 export const ListaLibri = (props: Props) => {
     const [libri, setLibri] = useState<Libro[]>()
     const [libro, setLibro] = useState<any>()
-    
+
     let aggiorna = props.aggiorna
     let setAggiorna = props.setAggiorna
-    
+
     useEffect(() => {
         axios.get<Libro[]>("http://localhost:4000/libreria/lista").then((Risultato) => {
             setLibri(Risultato.data)
@@ -22,14 +25,14 @@ export const ListaLibri = (props: Props) => {
             setAggiorna(false)
         })
     }, [aggiorna])
-    
+
     const elimina = (id: any): void => {
         axios.delete(`http://localhost:4000/libreria/elimina/${id}`).then((Risultato) => {
             console.log("eliminato")
             setAggiorna(true)
         })
     }
-    
+
     const modifica = (event: any) => {
         event.preventDefault()
         let autoreMod = event.target.autore.value
@@ -44,15 +47,15 @@ export const ListaLibri = (props: Props) => {
         axios.put<any>(`http://localhost:4000/libreria/modifica/${id}`, libroModificato).then((Risultato) => {
             console.log(Risultato)
             setAggiorna(true)
-        })  
+        })
     }
-    
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () =>
         setShow(true);
-        
-    
+
+
     const apriModale = (isbn: any) => {
         axios.get<any>(`http://localhost:4000/libreria/libro/${isbn}`).then((risultato) => {
             setLibro(risultato.data[0])
@@ -76,8 +79,8 @@ export const ListaLibri = (props: Props) => {
                             <Card.Body>{elemento.titolo}</Card.Body>
                             <hr className="hr"></hr>
                             <Card.Body className="mb-4">{elemento.descrizione}</Card.Body>
-                            <Card.Body> <button className="btn me-1 btn-card btn-delete" onClick={() => elimina(elemento.isbn)}>elimina</button>
-                                <Button type="submit" variant="primary" onClick={() => apriModale(elemento.isbn)} className="btn-card">Modifica</Button>
+                            <Card.Body> <button className="btn me-1 btn-card btn-delete" onClick={() => elimina(elemento.isbn)}><FontAwesomeIcon icon={faTrashCan} /></button>
+                                <Button type="submit" variant="primary" onClick={() => apriModale(elemento.isbn)} className="btn-card"><FontAwesomeIcon icon={faPencil} /></Button>
                             </Card.Body>
                         </Card>
                     </form>
@@ -105,10 +108,10 @@ export const ListaLibri = (props: Props) => {
                                 <Form.Control type="text" id="descrizione" placeholder={libro?.descrizione}></Form.Control>
                             </Form.Group>
                             <Button className="me-2 mt-3 w-100" variant="secondary" onClick={handleClose}>
-                                Close
+                                <FontAwesomeIcon icon={faRotateLeft} />
                             </Button>
                             <Button className="mt-2 w-100" type="submit" onClick={handleClose}>
-                                Salva
+                                <FontAwesomeIcon icon={faFloppyDisk} />
                             </Button>
                         </form>
                     </Modal.Body>

@@ -75,20 +75,24 @@ body {
 }
 
 .btn-card {
-  background-color: black;
+  background-color: rgb(119, 116, 215);
+}
+
+.card-body>.btn-primary:hover {
+  background-color: rgb(129, 127, 203);
+}
+
+.btn-primary:focus {
+  background-color: rgb(129, 127, 203);
 }
 
 .btn-delete {
-  background-color: red;
-}
-
-.btn-card:hover {
-  background-color: rgb(255, 0, 69, 1)
+  background-color: rgb(194, 49, 49);
 }
 
 .modal-content {
-  background: rgb(255, 177, 40);
-  background: linear-gradient(90deg, rgba(255, 177, 40, 1) 0%, rgba(255, 0, 69, 1) 100%, rgba(121, 9, 70, 1) 100%);
+  background: rgb(243, 63, 251);
+  background: radial-gradient(circle, rgba(151, 148, 233, 1) 100%, rgba(238, 174, 202) 0%);
   border-radius: 20px;
   padding: 10px;
 }
