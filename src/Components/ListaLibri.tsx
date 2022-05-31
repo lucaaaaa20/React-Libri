@@ -65,7 +65,6 @@ export const ListaLibri = (props: Props) => {
 
     const prova = (evt: any) => {
         evt.preventDefault()
-        console.log(evt.target)
     }
 
     return (

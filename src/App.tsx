@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App container">
-      <h1 className="my-3 text-white">LIBRERIA</h1>
+      <h1 className="my-3">LIBRERIA</h1>
       <FormLibro></FormLibro>
     </div>
   );
