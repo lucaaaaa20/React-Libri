@@ -73,11 +73,11 @@ export const ListaLibri = (props: Props) => {
                 <><Col className=" col-lg-4 col-md-6 col-sm-12 col-12 mb-3">
                     <form onSubmit={prova}>
                         <Card className="border border-dark p-2" key={indice}>
-                            <Card.Title className="mt-3">{elemento.autore}</Card.Title>
+                            <Card.Title className="mt-3"><strong>Titolo:</strong> {elemento.titolo ? elemento.titolo : "Non definito"}</Card.Title>
                             <hr className="hr"></hr>
-                            <Card.Body>{elemento.titolo}</Card.Body>
+                            <Card.Body><strong>Autore:</strong> {elemento.autore ? elemento.autore : "Non definito"}</Card.Body>
                             <hr className="hr"></hr>
-                            <Card.Body className="mb-4">{elemento.descrizione}</Card.Body>
+                            <Card.Body className="mb-4"><strong>Descrizione:</strong> {elemento.descrizione ? elemento.descrizione : "Non definito"}</Card.Body>
                             <Card.Body> <button className="btn me-1 btn-card btn-delete" onClick={() => elimina(elemento.isbn)}><FontAwesomeIcon icon={faTrashCan} /></button>
                                 <Button type="submit" variant="primary" onClick={() => apriModale(elemento.isbn)} className="btn-card"><FontAwesomeIcon icon={faPencil} /></Button>
                             </Card.Body>

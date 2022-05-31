@@ -23,7 +23,7 @@ export const FormLibro = () => {
         evt.target.inputDescrizione.value = ""
     }
     const [aggiorna, setAggiorna] = useState<boolean>(false)
-    
+
     return (
         <>
             <div className="row">
@@ -43,7 +43,7 @@ export const FormLibro = () => {
                             <Form.Label className="mt-2">Descrizione</Form.Label>
                             <Form.Control type="text" id="inputDescrizione" placeholder="Inserisci la descrizione"></Form.Control>
                         </Form.Group>
-                        <button type="submit" className=" mt-4 btn btn-form mb-3 px-5 btn-block">Inserisci</button>
+                        <button type="submit" className=" mt-4 btn btn-form mb-3 px-5 btn-block invio text-white">Inserisci</button>
                     </form>
                 </div>
             </div>
