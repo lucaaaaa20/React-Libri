@@ -1,7 +1,7 @@
-body {
+/* body {
   background: rgb(238, 174, 202);
   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(151, 148, 233, 1) 100%);
-}
+} */
 
 .App {
   text-align: center;
@@ -111,4 +111,12 @@ body {
 
 .invio{
   background-color: rgb(88, 85, 187);
+}
+
+.col-index{
+  z-index: 10;
+}
+
+.nav-index{
+  z-index: 100;
 }

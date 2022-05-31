@@ -47,7 +47,6 @@ export const FormLibro = () => {
                     </form>
                 </div>
             </div>
-            <ListaLibri aggiorna={aggiorna} setAggiorna={setAggiorna}></ListaLibri>
         </>
     )
 }

@@ -6,17 +6,11 @@ import { FormLibro } from "./FormLibro";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPencil, faFloppyDisk, faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 
-interface Props {
-    aggiorna: boolean,
-    setAggiorna: any
-}
-
-export const ListaLibri = (props: Props) => {
+export const ListaLibri = () => {
     const [libri, setLibri] = useState<Libro[]>()
     const [libro, setLibro] = useState<any>()
 
-    let aggiorna = props.aggiorna
-    let setAggiorna = props.setAggiorna
+    const[aggiorna, setAggiorna] = useState<boolean>(false)
 
     useEffect(() => {
         axios.get<Libro[]>("http://localhost:4000/libreria/lista").then((Risultato) => {
@@ -70,7 +64,7 @@ export const ListaLibri = (props: Props) => {
     return (
         <Row>
             {libri?.map((elemento: any, indice: any) =>
-                <><Col className=" col-lg-4 col-md-6 col-sm-12 col-12 mb-3">
+                <><Col className=" col-lg-4 col-md-6 col-sm-12 col-12 mb-3 col-index">
                     <form onSubmit={prova}>
                         <Card className="border border-dark p-2" key={indice}>
                             <Card.Title className="mt-3"><strong>Titolo:</strong> {elemento.titolo ? elemento.titolo : "Non definito"}</Card.Title>
