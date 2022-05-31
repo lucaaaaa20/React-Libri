@@ -1,3 +1,8 @@
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(101, 2, 29, 1) 44%, rgba(147, 9, 84, 1) 100%);
+}
+
 .App {
   text-align: center;
 }
@@ -32,7 +37,45 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.card {
+  background-color: rgb(255, 177, 40);
+  margin: 0 auto;
+  /* Added */
+  float: none;
+  /* Added */
+  margin-bottom: 10px;
+  /* Added */
+  border-radius: 30px;
+}
+
+.form-aggiunta {
+  background: rgb(255, 177, 40);
+  background: linear-gradient(90deg, rgba(255, 177, 40, 1) 0%, rgba(255, 0, 69, 1) 100%, rgba(121, 9, 70, 1) 100%);
+  border-radius: 20px;
+}
+
+.btn-form {
+  background-color: white;
+  width: 100%
+}
+
+.btn-card {
+  background-color: black;
+}
+
+.btn-card:hover {
+  background-color: rgb(255, 0, 69, 1)
+}
+
+.modal-content {
+  background: rgb(255, 177, 40);
+  background: linear-gradient(90deg, rgba(255, 177, 40, 1) 0%, rgba(255, 0, 69, 1) 100%, rgba(121, 9, 70, 1) 100%);
+  border-radius: 20px;
+  padding: 10px;
 }

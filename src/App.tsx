@@ -6,8 +6,8 @@ import { FormLibro } from './Components/FormLibro';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Titolo</h1>
+    <div className="App container">
+      <h1 className="my-3 text-white">LIBRERIA</h1>
       <FormLibro></FormLibro>
     </div>
   );
