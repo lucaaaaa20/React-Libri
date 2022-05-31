@@ -1,6 +1,6 @@
 body {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(101, 2, 29, 1) 44%, rgba(147, 9, 84, 1) 100%);
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(151, 148, 233, 1) 100%);
 }
 
 .App {
@@ -44,8 +44,13 @@ body {
 }
 
 .card {
-  background-color: rgb(255, 177, 40);
+  background: rgb(243, 63, 251);
+  background: radial-gradient(circle, rgba(151, 148, 233, 1) 100%, rgba(238, 174, 202) 0%);
   margin: 0 auto;
+  -webkit-box-shadow: 11px 9px 26px -10px #000000;
+  -moz-box-shadow: 11px 9px 26px -10px #000000;
+  -o-box-shadow: 11px 9px 26px -10px #000000;
+  box-shadow: 11px 9px 26px -10px #000000;
   /* Added */
   float: none;
   /* Added */
@@ -55,8 +60,12 @@ body {
 }
 
 .form-aggiunta {
-  background: rgb(255, 177, 40);
-  background: linear-gradient(90deg, rgba(255, 177, 40, 1) 0%, rgba(255, 0, 69, 1) 100%, rgba(121, 9, 70, 1) 100%);
+  background: rgb(243, 63, 251);
+  background: radial-gradient(circle, rgba(151, 148, 233, 1) 100%, rgba(238, 174, 202) 0%);
+  -webkit-box-shadow: 4px 5px 33px 0px #000000;
+  -moz-box-shadow: 4px 5px 33px 0px #000000;
+  -o-box-shadow: 4px 5px 33px 0px #000000;
+  box-shadow: 4px 5px 33px 0px #000000;
   border-radius: 20px;
 }
 
@@ -69,6 +78,10 @@ body {
   background-color: black;
 }
 
+.btn-delete {
+  background-color: red;
+}
+
 .btn-card:hover {
   background-color: rgb(255, 0, 69, 1)
 }
@@ -78,4 +91,16 @@ body {
   background: linear-gradient(90deg, rgba(255, 177, 40, 1) 0%, rgba(255, 0, 69, 1) 100%, rgba(121, 9, 70, 1) 100%);
   border-radius: 20px;
   padding: 10px;
+}
+
+.card>.hr {
+  height: 2px;
+  border-radius: 10px;
+  background-color: red;
+  width: 50%;
+  margin: 10px auto 10px auto;
+}
+
+.card-body {
+  padding: 2px;
 }

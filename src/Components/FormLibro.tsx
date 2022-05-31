@@ -23,7 +23,7 @@ export const FormLibro = () => {
         evt.target.inputDescrizione.value = ""
     }
     const [aggiorna, setAggiorna] = useState<boolean>(false)
-
+    
     return (
         <>
             <div className="row">

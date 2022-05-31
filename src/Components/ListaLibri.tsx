@@ -41,7 +41,6 @@ export const ListaLibri = (props: Props) => {
             descrizione: descrizioneMod
         }
         let id = libro?.isbn
-        console.log("l'id del libro è" + id, libroModificato, libro)
         axios.put<any>(`http://localhost:4000/libreria/modifica/${id}`, libroModificato).then((Risultato) => {
             console.log(Risultato)
             setAggiorna(true)
@@ -56,9 +55,7 @@ export const ListaLibri = (props: Props) => {
     
     const apriModale = (isbn: any) => {
         axios.get<any>(`http://localhost:4000/libreria/libro/${isbn}`).then((risultato) => {
-            for(let i = 0; i < risultato.data.length; i++){
-                setLibro(risultato.data[0])
-            }
+            setLibro(risultato.data[0])
         })
         setShow(true);
     }
@@ -74,10 +71,12 @@ export const ListaLibri = (props: Props) => {
                 <><Col className=" col-lg-4 col-md-6 col-sm-12 col-12 mb-3">
                     <form onSubmit={prova}>
                         <Card className="border border-dark p-2" key={indice}>
-                            <Card.Title className="mt-3">{elemento.titolo}</Card.Title>
-                            <Card.Body>{elemento.descrizione}</Card.Body>
-                            <Card.Body>{elemento.autore}</Card.Body>
-                            <Card.Body> <button className="btn btn-primary me-1 btn-card" onClick={() => elimina(elemento.isbn)}>elimina</button>
+                            <Card.Title className="mt-3">{elemento.autore}</Card.Title>
+                            <hr className="hr"></hr>
+                            <Card.Body>{elemento.titolo}</Card.Body>
+                            <hr className="hr"></hr>
+                            <Card.Body className="mb-4">{elemento.descrizione}</Card.Body>
+                            <Card.Body> <button className="btn me-1 btn-card btn-delete" onClick={() => elimina(elemento.isbn)}>elimina</button>
                                 <Button type="submit" variant="primary" onClick={() => apriModale(elemento.isbn)} className="btn-card">Modifica</Button>
                             </Card.Body>
                         </Card>
