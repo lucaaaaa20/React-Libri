@@ -12,8 +12,10 @@ function App() {
     <>
     <NavBar></NavBar>
     <div className="App container">
-      <Routes>
-        <Route path="/" element={<FormLibro/>}/>
+      <Routes> 
+        {/* ROUTE PERMETTE DI IMPOSTARE IL SEGMENTO CHE RENDIZZERA UN DETERMINATO COMPONENTE*/}
+        {/* CONTROLLA COMPONENTE NavBar PER VEDERE DOVE E' STATO IMPOSTATO IL PATH DI OGNI PAGINA */}
+        <Route path="/" element={<FormLibro/>}/> 
         <Route path="/form" element={<FormLibro/>}/>
         <Route path="/lista-card" element={<ListaLibri/>}/>
       </Routes>

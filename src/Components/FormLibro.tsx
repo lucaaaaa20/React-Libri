@@ -1,3 +1,5 @@
+//COMPONENTE CHE GESTISCE L'AGGIUNTA DI UN NUOVO LIBRO NEL DB
+
 import React, { useState } from "react";
 import axios from "axios";
 import { Form } from "react-bootstrap";
@@ -6,9 +8,10 @@ import { ListaLibri } from "./ListaLibri";
 
 export const FormLibro = () => {
 
+    //FUNZIONE CHE VIENE RICHIAMATA AL CLICK DEL SUBMIT DEL FORM 
     const inserimentoLibro = (evt: any) => {
         evt.preventDefault()
-        let autore = evt.target.inputAutore.value
+        let autore = evt.target.inputAutore.value //GUARDA COMPONENTE ListaLibri riga 32
         let titolo = evt.target.inputTitolo.value
         let descrizione = evt.target.inputDescrizione.value
         let libro = {
@@ -16,6 +19,7 @@ export const FormLibro = () => {
             titolo: titolo,
             descrizione: descrizione
         }
+        //VADO A INSERIRE I VALORI INSERITI NEL FORM NEL DB
         axios.post<Libro>("http://localhost:4000/libreria/addLibro", libro).then((risultato) => { console.log(risultato) })
         setAggiorna(true)
         evt.target.inputAutore.value = ""

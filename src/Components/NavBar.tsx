@@ -9,6 +9,7 @@ export const NavBar = () => {
         <>
             <Nav defaultActiveKey="/home" as="ul" className="bg-dark py-2 mb-5 nav-index">
                 <Nav.Item as="li">
+                    {/* LINK PERMETTE DI CREARE IL SEGMENTO CHE PERMETTE DI AVERE PAGINE DIVERSE */}
                     <Link to="/form" className="nav-link text-nav">
                         <FontAwesomeIcon icon={faRectangleList}/> Inserimento
                     </Link>
