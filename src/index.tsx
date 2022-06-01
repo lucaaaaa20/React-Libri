@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    {/* L'AGGIUNTA DI BrowserRouter PERMETTE DI CREARE IL REINDIRIZZAMENTO */}
     <BrowserRouter>
       <App />
     </BrowserRouter>
